@@ -18,4 +18,9 @@ jobs:
       - uses: pixta-dev/repository-mirroring-action@v1
         with:
               target_repo_url: git@github.com:EpitechMscProPromo2028/T-WEB-501-NAN_2.git
-              ssh_private_key: ${{ secrets.EPITECH_MIRROR_SSH_KEY }}
+              ssh_private_key: ${{ b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABDcZqY5Ec
+1hiOQHvb+Zon3bAAAAGAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAICO3RLr+VoC+VfVG
++7PztxEw3bxXwxZKXhIOzmNtSMnvAAAAoE8HMw4lie1JhHoH15CU4aixR6149ABYpEcGre
+mTUzUOn3//W9Yrs1uehmDHDsIx1pi+PcS8bm6FkJ/3DwoIeO2681VCDEzSlVEk7KEMkAeI
+Bi+f6U/8mcHNueV6tJ9+PMkd+P12cCNkSMoMl6F4sIJ+/tfkfbPqqDWyT+mFqq7T00c2yK
+PwYFjrfNMf5u0hjpQrfpgwqncqdj54HmbE5+0= }}
