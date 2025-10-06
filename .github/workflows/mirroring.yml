@@ -3,7 +3,7 @@ name: Mirroring
 on:
   push:
     branches:
-      main   # déclenche le mirroring uniquement quand tu pushes sur main
+    - main   # déclenche le mirroring uniquement quand tu pushes sur main
 
 jobs:
   to_epitech_github:
