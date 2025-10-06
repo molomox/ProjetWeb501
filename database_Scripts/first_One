@@ -1,0 +1,51 @@
+CREATE TABLE profil(
+   Id_Profil INT AUTO_INCREMENT,
+   name VARCHAR(50) NOT NULL,
+   mdp VARCHAR(50) NOT NULL,
+   email VARCHAR(50) NOT NULL,
+   PRIMARY KEY(Id_Profil)
+);
+
+CREATE TABLE compagny(
+   Id_Profil INT,
+   place VARCHAR(50) NOT NULL,
+   description VARCHAR(50) NOT NULL,
+   PRIMARY KEY(Id_Profil),
+   FOREIGN KEY(Id_Profil) REFERENCES profil(Id_Profil)
+);
+
+CREATE TABLE job(
+   Id_Job INT AUTO_INCREMENT,
+   description VARCHAR(300) NOT NULL,
+   salary INT NOT NULL,
+   startDate DATE NOT NULL,
+   endDate DATE NOT NULL,
+   horraire VARCHAR(50) NOT NULL,
+   Id_Profil INT NOT NULL,
+   PRIMARY KEY(Id_Job),
+   FOREIGN KEY(Id_Profil) REFERENCES compagny(Id_Profil)
+);
+
+CREATE TABLE seeker(
+   Id_Profil INT,
+   age INT NOT NULL,
+   PRIMARY KEY(Id_Profil),
+   FOREIGN KEY(Id_Profil) REFERENCES profil(Id_Profil)
+);
+
+CREATE TABLE admin(
+   Id_admin INT AUTO_INCREMENT,
+   mdp VARCHAR(50) NOT NULL,
+   username VARCHAR(50) NOT NULL,
+   PRIMARY KEY(Id_admin)
+);
+
+CREATE TABLE demande(
+   Id_Job INT,
+   Id_Profil INT,
+   accept BOOLEAN NOT NULL,
+   message VARCHAR(300) NOT NULL,
+   PRIMARY KEY(Id_Job, Id_Profil),
+   FOREIGN KEY(Id_Job) REFERENCES job(Id_Job),
+   FOREIGN KEY(Id_Profil) REFERENCES seeker(Id_Profil)
+);
